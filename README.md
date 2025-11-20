@@ -151,11 +151,4 @@ src/
    * News (Gemini Search Grounding)
 4. UI renders dynamic cards, charts, and maps using Tailwind CSS.
 
----
-
-## 📄 License
-
-This project is open-source and available under the **MIT License**.
-
----
 
