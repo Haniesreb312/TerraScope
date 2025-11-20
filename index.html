@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TerraScope AI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              slate: {
+                850: '#172033',
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <style>
+      body {
+        font-family: 'Inter', sans-serif;
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+      
+      /* Default (Light Mode) Glass Panel */
+      .glass-panel {
+        background: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(203, 213, 225, 0.6); /* slate-300 */
+      }
+
+      /* Dark Mode Glass Panel */
+      .dark .glass-panel {
+        background: rgba(30, 41, 59, 0.7);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .gradient-text {
+        background: linear-gradient(to right, #0ea5e9, #6366f1); /* Sky-500 to Indigo-500 */
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        color: transparent;
+      }
+      .dark .gradient-text {
+        /* Use background-image to avoid resetting background-clip */
+        background-image: linear-gradient(to right, #38bdf8, #818cf8);
+      }
+
+      /* Custom map marker animation */
+      .custom-pin-marker {
+        background-color: #38bdf8;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        box-shadow: 0 0 0 rgba(56, 189, 248, 0.4);
+        animation: pulse-blue 2s infinite;
+        border: 2px solid #fff;
+      }
+      @keyframes pulse-blue {
+        0% {
+          box-shadow: 0 0 0 0 rgba(56, 189, 248, 0.7);
+        }
+        70% {
+          box-shadow: 0 0 0 10px rgba(56, 189, 248, 0);
+        }
+        100% {
+          box-shadow: 0 0 0 0 rgba(56, 189, 248, 0);
+        }
+      }
+      
+      /* Leaflet overrides */
+      .leaflet-popup-content-wrapper, .leaflet-popup-tip {
+        background: #ffffff;
+        color: #0f172a;
+        border: 1px solid #e2e8f0;
+      }
+      .dark .leaflet-popup-content-wrapper, .dark .leaflet-popup-tip {
+        background: #1e293b;
+        color: #f8fafc;
+        border: 1px solid rgba(255,255,255,0.1);
+      }
+      .leaflet-container a.leaflet-popup-close-button {
+        color: #64748b;
+      }
+      .dark .leaflet-container a.leaflet-popup-close-button {
+        color: #94a3b8;
+      }
+      
+      /* Custom Scrollbar for comparison view */
+      .custom-scrollbar::-webkit-scrollbar {
+        height: 8px;
+      }
+      .custom-scrollbar::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      .custom-scrollbar::-webkit-scrollbar-thumb {
+        background-color: rgba(148, 163, 184, 0.5);
+        border-radius: 4px;
+      }
+      .dark .custom-scrollbar::-webkit-scrollbar-thumb {
+        background-color: rgba(71, 85, 105, 0.5);
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.554.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "recharts": "https://aistudiocdn.com/recharts@^3.4.1",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>

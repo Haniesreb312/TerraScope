@@ -1,0 +1,5 @@
+{
+  "name": "TerraScope",
+  "description": "An AI-powered country data explorer that generates comprehensive profiles including demographics, economics, and travel insights using Gemini 2.5 Flash.",
+  "requestFramePermissions": []
+}
