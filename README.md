@@ -162,8 +162,3 @@ This project is open-source and available under the **MIT License**.
 
 ---
 
-If you want, I can also:
-✅ Add badges (tech stack, license, stars, etc.)
-✅ Make it more futuristic
-✅ Add screenshots or a demo section
-Just tell me!
