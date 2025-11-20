@@ -1,6 +1,3 @@
-Here’s a clean, polished, professional **README.md** version of your text — formatted, structured, and GitHub-ready:
-
----
 
 # 🌍 TerraScope
 
