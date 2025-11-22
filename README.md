@@ -3,6 +3,8 @@
 
 **TerraScope** is an advanced, AI-powered country explorer application. It leverages **Google's Gemini 2.5 Flash** model to generate comprehensive, real-time profiles for any country on Earth — combining generative text, structured data, economic insights, and live news into a beautiful glassmorphic user interface.
 
+Visit the website: terrascopeai.netlify.app
+
 ---
 
 ## ✨ Features
